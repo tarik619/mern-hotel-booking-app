@@ -35,7 +35,7 @@ router.post(
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
       });
-      return res.sendStatus(200);
+      return res.status(200).json({ message: "user registered" });
     } catch (error) {
       res.status(500).json({ message: "Server Error" });
       console.log(error);
