@@ -2,11 +2,11 @@
   "name": "mern-booking-hotel-app",
   "version": "1.0.0",
   "description": "",
-  "main": "./backend/src/index.ts",
+  "main": ".backend/src/index.ts",
   "scripts": {
     "dev": "nodemon",
-    "build": "npm install && npm tsc",
-    "start": "node ./dist/index.js",
+    "build": "npm install && npx tsc",
+    "start": "node ./backend/dist/backend/src/index.js",
     "e2e": "cross-env DOTENV_CONFIG_PATH=.env.e2e nodemon"
   },
   "author": "",
