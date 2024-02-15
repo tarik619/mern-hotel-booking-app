@@ -4,6 +4,7 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import userRoutes from "./routes/user.route";
 import authRoutes from "./routes/auth.route";
+import myHotelRoutes from "./routes/my-hotels.route";
 import cookieParser from "cookie-parser";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
@@ -42,6 +43,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/my-hotels", myHotelRoutes);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
