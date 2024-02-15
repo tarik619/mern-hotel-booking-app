@@ -5,8 +5,14 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/user.route";
 import authRoutes from "./routes/auth.route";
 import cookieParser from "cookie-parser";
-import exp from "constants";
 import path from "path";
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 mongoose
   .connect(process.env.MONGO_URI as string)
@@ -27,6 +33,10 @@ app.use(
     credentials: true,
   })
 );
+
+// render build command: cd frontend && npm install && npm run build && cd ../backend && npm run build
+
+// start command: cd backend && npm start
 
 // app.use(express.static(path.join(__dirname,"../../client/dist")))
 
